@@ -5,11 +5,10 @@ const Svg = () => {
     const path = 'M0,0' +
                  'H10' +
                  'V10';
-    {/* C {path node start pos} {curvature control } {path node end pos} */}
-    const pathCubic = 'M   0,0' +
-                      'C   5,0   30,0  100,5,' +
-                      'C  10,10   0,30   5,5' +
-                      'C   0,0    0,0    0,0';
+    {/* C {controlpoint start of curve} {controlpoint end of curve} {coords where path ends} */}
+    const pathCubic = 'M   0,0' +                      
+                      'C   0,0 100,10 10,10';
+                       
     return (
         <>
         {/*<img src={Logo} />*/}
