@@ -6,8 +6,8 @@ const Svg = () => {
                  'H10' +
                  'V10';
     {/* C {controlpoint start of curve} {controlpoint end of curve} {coords where path ends} */}
-    const pathCubic = 'M   0,0' +                      
-                      'C   0,0 100,10 10,10';
+    const pathCubic = 'M 0,0     C 0,0 0,30 95,10' +
+                      'M 95,10   C 100,0 0,0 0,20';
                        
     return (
         <>
@@ -17,11 +17,11 @@ const Svg = () => {
             follows a horizontal path of 10
             then follows a path of 10 vertically
         */}
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <svg height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path
             id="MyPath"
             fill="none"
-            stroke="silver"
+            stroke="red"
             strokeWidth="0.2"
             d={pathCubic} />
         </svg>
