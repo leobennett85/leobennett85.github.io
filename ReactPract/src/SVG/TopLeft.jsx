@@ -2,7 +2,8 @@ import './Svg.css';
 
 const TopLeft = () => {
     const mainPath =  'M 0 0 L 30 0' +
-                      'M 0 0 L 0 30' ;
+                      'M 0 0 L 0 30' +
+                      'M' ;
     const mainPath2 = 'M 0 0 Q -10 3, 6 9';
     return (
         <>

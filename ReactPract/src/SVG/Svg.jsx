@@ -2,6 +2,7 @@ import './Svg.css';
 import SvgTest1 from './SvgTest1';
 import TopLeft from './TopLeft';
 import TopRight from './TopRight';
+import SvgMainWiggle from './SvgMainWiggle';
 
 const Svg = () => {
     const printCoord = (x,y) => {
@@ -23,9 +24,10 @@ const Svg = () => {
     
     return (
         <>
-            <SvgTest1 />
+            {/* <SvgTest1 />
             <TopLeft />
-            <TopRight />
+            <TopRight />  */}
+            <SvgMainWiggle />
             <div id="newCoordX"></div>
             <div id="newCoordY"></div>
         </>
