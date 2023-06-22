@@ -13,8 +13,8 @@ const Svg = () => {
     };
 
     const getPos = (event) => {
-        let x = (event.clientX) / 10;
-        let y = (event.clientY) / 10;
+        let x = (event.screenX);
+        let y = (event.screenY);
         printCoord(x,y);
     };
 
