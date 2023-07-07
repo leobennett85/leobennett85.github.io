@@ -24,9 +24,6 @@ const Svg = () => {
     
     return (
         <>
-            {/* <SvgTest1 />
-            <TopLeft />
-            <TopRight />  */}
             <SvgMainWiggle />
             <div id="newCoordX"></div>
             <div id="newCoordY"></div>
