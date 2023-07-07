@@ -25,8 +25,8 @@ const SvgMainWiggle = () => {
     Wiggle.prototype.toString = function() {
         return `${this.m} ${this.c1} ${this.c2} ${this.c3}`;
     }
-
     const pathOriginString = wiggleTestObj.toString();
+
 
 {/* Create new Wiggle Object */}
 {/*Swivle Shape*/}
