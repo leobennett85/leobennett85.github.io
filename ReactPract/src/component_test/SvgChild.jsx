@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SvgChild = ({ fillColor, strokeWidth }) => {
   return (
     <svg width="200" height="200">
