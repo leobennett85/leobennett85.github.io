@@ -1,6 +1,6 @@
 import { useState} from "react";
 
-const SvgConstructor = ( {
+const SvgConstructor = ({
   initialSvgId, 
   initialSvgHeight,
   initialSvgWidth,
@@ -11,7 +11,7 @@ const SvgConstructor = ( {
   initialPathStroke,
   initialPathStrokeWidth,
   initialPathD
-} ) => {
+}) => {
   const [svgId, setSvgId] = useState(initialSvgId);
   const [svgHeight, setSvgHeight] = useState(initialSvgHeight);
   const [svgWidth, setSvgWidth] = useState(initialSvgWidth);
@@ -32,15 +32,14 @@ const SvgConstructor = ( {
       id = {svgId}
       height = {svgHeight}
       width = {svgWidth}
-      svgViewBox = {svgViewBox}
-      preserveAspectRatio = {svgPreserveAspectRatio}
-    >
-      <path
-        id = {pathId}
-        fill = {pathFill}
-        stroke = {pathStroke}
-        strokeWidth = {pathStrokeWidth}
-        d = {pathD} />
+      viewBox = {svgViewBox}
+      preserveAspectRatio = {svgPreserveAspectRatio}>
+        <path
+          id = {pathId}
+          fill = {pathFill}
+          stroke = {pathStroke}
+          strokeWidth = {pathStrokeWidth}
+          d = {pathD} />
     </svg>
   );
 {/* Data Needed

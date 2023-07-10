@@ -41,7 +41,7 @@ const svgSpiro = "m 57.446808,81.574469 c -2.586428,-4.298065 -4.00893,-9.28905 
     let svgViewBox = '0 0 100 100';
     {/* SVG Path attributes */}
     let pathId = 'mainWigglePath';
-    let pathD = svgSpiro;
+    let pathD = pathOriginString;
 
     {/* Create new SVGs */}
     const renderNewSVG = () => {
