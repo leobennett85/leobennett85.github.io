@@ -1,281 +1,78 @@
-import { Component } from 'react';
-//import SvgChild from './SvgChild';
+import { useState} from "react";
 
-class SvgConstructor extends Component {
-    constructor(props) {
-      super(props);
-  
-      // Initialize the SVG attribute values in the component state
-      this.state = {
-        accentHeight: "",
-        accumulate: "",
-        additive: "",
-        alignmentBaseline: "",
-        allowReorder: "",
-        alphabetic: "",
-        amplitude: "",
-        arabicForm: "",
-        ascent: "",
-        attributeName: "",
-        attributeType: "",
-        autoReverse: "",
-        azimuth: "",
-        baseFrequency: "",
-        baselineShift: "",
-        baseProfile: "",
-        bbox: "",
-        begin: "",
-        bias: "",
-        by: "",
-        calcMode: "",
-        capHeight: "",
-        clip: "",
-        clipPath: "",
-        clipPathUnits: "",
-        clipRule: "",
-        color: "",
-        colorInterpolation: "",
-        colorInterpolationFilters: "",
-        colorProfile: "",
-        colorRendering: "",
-        contentScriptType: "",
-        contentStyleType: "",
-        cursor: "",
-        cx: "",
-        cy: "",
-        d: "",
-        decelerate: "",
-        descent: "",
-        diffuseConstant: "",
-        direction: "",
-        display: "",
-        divisor: "",
-        dominantBaseline: "",
-        dur: "",
-        dx: "",
-        dy: "",
-        edgeMode: "",
-        elevation: "",
-        enableBackground: "",
-        end: "",
-        exponent: "",
-        externalResourcesRequired: "",
-        fill: "",
-        fillOpacity: "",
-        fillRule: "",
-        filter: "",
-        filterRes: "",
-        filterUnits: "",
-        floodColor: "",
-        floodOpacity: "",
-        focusable: "",
-        fontFamily: "",
-        fontSize: "",
-        fontSizeAdjust: "",
-        fontStretch: "",
-        fontStyle: "",
-        fontVariant: "",
-        fontWeight: "",
-        format: "",
-        from: "",
-        fr: "",
-        fx: "",
-        fy: "",
-        g1: "",
-        g2: "",
-        glyphName: "",
-        glyphOrientationHorizontal: "",
-        glyphOrientationVertical: "",
-        glyphRef: "",
-        gradientTransform: "",
-        gradientUnits: "",
-        hanging: "",
-        height: "",
-        href: "",
-        hrefLang: "",
-        horizAdvX: "",
-        horizOriginX: "",
-        ideographic: "",
-        imageRendering: "",
-        in: "",
-        in2: "",
-        intercept: "",
-        k: "",
-        k1: "",
-        k2: "",
-        k3: "",
-        k4: "",
-        kernelMatrix: "",
-        kernelUnitLength: "",
-        kerning: "",
-        keyPoints: "",
-        keySplines: "",
-        keyTimes: "",
-        lang: "",
-        lengthAdjust: "",
-        letterSpacing: "",
-        lightingColor: "",
-        limitingConeAngle: "",
-        local: "",
-        markerEnd: "",
-        markerMid: "",
-        markerStart: "",
-        markerHeight: "",
-        markerUnits: "",
-        markerWidth: "",
-        mask: "",
-        maskContentUnits: "",
-        maskUnits: "",
-        mathematical: "",
-        max: "",
-        media: "",
-        method: "",
-        min: "",
-        mode: "",
-        name: "",
-        numOctaves: "",
-        offset: "",
-        opacity: "",
-        operator: "",
-        order: "",
-        orient: "",
-        orientation: "",
-        origin: "",
-        overflow: "",
-        overlinePosition: "",
-        overlineThickness: "",
-        paintOrder: "",
-        panose1: "",
-        path: "",
-        pathLength: "",
-        patternContentUnits: "",
-        patternTransform: "",
-        patternUnits: "",
-        pointerEvents: "",
-        points: "",
-        pointsAtX: "",
-        pointsAtY: "",
-        pointsAtZ: "",
-        preserveAlpha: "",
-        preserveAspectRatio: "",
-        primitiveUnits: "",
-        r: "",
-        radius: "",
-        refX: "",
-        refY: "",
-        renderingIntent: "",
-        repeatCount: "",
-        repeatDur: "",
-        requiredExtensions: "",
-        requiredFeatures: "",
-        restart: "",
-        result: "",
-        rotate: "",
-        rx: "",
-        ry: "",
-        scale: "",
-        seed: "",
-        shapeRendering: "",
-        slope: "",
-        spacing: "",
-        specularConstant: "",
-        specularExponent: "",
-        speed: "",
-        spreadMethod: "",
-        startOffset: "",
-        stdDeviation: "",
-        stemh: "",
-        stemv: "",
-        stitchTiles: "",
-        stopColor: "",
-        stopOpacity: "",
-        strikethroughPosition: "",
-        strikethroughThickness: "",
-        string: "",
-        stroke: "",
-        strokeDasharray: "",
-        strokeDashoffset: "",
-        strokeLinecap: "",
-        strokeLinejoin: "",
-        strokeMiterlimit: "",
-        strokeOpacity: "",
-        strokeWidth: "",
-        style: "",
-        surfaceScale: "",
-        systemLanguage: "",
-        tabIndex: "",
-        tableValues: "",
-        target: "",
-        targetX: "",
-        targetY: "",
-        textAnchor: "",
-        textDecoration: "",
-        textLength: "",
-        textRendering: "",
-        to: "",
-        transform: "",
-        type: "",
-        u1: "",
-        u2: "",
-        underlinePosition: "",
-        underlineThickness: "",
-        unicode: "",
-        unicodeBidi: "",
-        unicodeRange: "",
-        unitsPerEm: "",
-        vAlphabetic: "",
-        vHanging: "",
-        vIdeographic: "",
-        vMathematical: "",
-        values: "",
-        vectorEffect: "",
-        version: "",
-        vertAdvY: "",
-        vertOriginX: "",
-        vertOriginY: "",
-        viewBox: "",
-        viewTarget: "",
-        visibility: "",
-        width: "",
-        widths: "",
-        wordSpacing: "",
-        writingMode: "",
-        x: "",
-        x1: "",
-        x2: "",
-        xChannelSelector: "",
-        xlinkActuate: "",
-        xlinkArcrole: "",
-        xlinkHref: "",
-        xlinkRole: "",
-        xlinkShow: "",
-        xlinkTitle: "",
-        xlinkType: "",
-        xmlns: "",
-        xmlnsXlink: "",
-        xmlBase: "",
-        xmlLang: "",
-        xmlSpace: "",
-        y: "",
-        y1: "",
-        y2: "",
-        yChannelSelector: "",
-        z: "",
-        zoomAndPan: ""
+const SvgConstructor = ( {
+  initialSvgId, 
+  initialSvgHeight,
+  initialSvgWidth,
+  initialSvgViewBox,
+  initialSvgPreserveAspectRatio,
+  initialPathId,
+  initialPathFill,
+  initialPathStroke,
+  initialPathStrokeWidth,
+  initialPathD
+} ) => {
+  const [svgId, setSvgId] = useState(initialSvgId);
+  const [svgHeight, setSvgHeight] = useState(initialSvgHeight);
+  const [svgWidth, setSvgWidth] = useState(initialSvgWidth);
+  const [svgViewBox, setSvgViewBox] = useState(initialSvgViewBox);
+  const [svgPreserveAspectRatio, setSvgPreserveAspectRatio] = useState(initialSvgPreserveAspectRatio);
+  const [pathId, setPathId] = useState(initialPathId);
+  const [pathFill, setPathFill] = useState(initialPathFill);
+  const [pathStroke, setPathStroke] = useState(initialPathStroke);
+  const [pathStrokeWidth, setPathStrokeWidth] = useState(initialPathStrokeWidth);
+  const [pathD, setPathD] = useState(initialPathD);
 
-        // Add more attributes as needed
-      };
-    }
-  
-    render() {
-      // Render the child component and pass the SVG attribute values as props
-      return (
-        <div>
-          <h1>Parent Component</h1>
-          <SvgChild {...this.state} />
-        </div>
-      );
-    }
-  }
-  
-  export default SvgParent;
+  // Add Hook Handles based on events
+
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      id = {svgId}
+      height = {svgHeight}
+      width = {svgWidth}
+      svgViewBox = {svgViewBox}
+      preserveAspectRatio = {svgPreserveAspectRatio}
+    >
+      <path
+        id = {pathId}
+        fill = {pathFill}
+        stroke = {pathStroke}
+        strokeWidth = {pathStrokeWidth}
+        d = {pathD} />
+    </svg>
+  );
+{/* Data Needed
+    id="mainWiggleHardCode"
+    height="100%" 
+    width="100%" 
+    viewBox="0 0 100 100" 
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    id="mainWigglePathHardCode"
+    fill="none"
+    stroke="black"
+    strokeWidth="0.07"
+    d={pathOriginString}
+*/}
+
+{/* full svg
+    id="mainWiggleHardCode"
+                height="100%" 
+                width="100%" 
+                viewBox="0 0 100 100" 
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg">
+                <path 
+                    id="mainWigglePathHardCode"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="0.07"
+                    d={pathOriginString} />
+*/}
+}
+
+export default SvgConstructor;

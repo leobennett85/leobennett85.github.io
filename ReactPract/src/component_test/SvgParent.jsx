@@ -9,6 +9,7 @@ class SvgParent extends Component {
       this.state = {
         fillColor: 'blue',
         strokeWidth: 2,
+        xmlns: "http://www.w3.org/2000/svg"
         // Add more attributes as needed
       };
     }
