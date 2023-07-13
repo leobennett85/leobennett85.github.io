@@ -10,7 +10,8 @@ const SvgConstructor = ({
   initialPathFill,
   initialPathStroke,
   initialPathStrokeWidth,
-  initialPathD
+  initialPathD,
+  addedPath
 }) => {
   const [svgId, setSvgId] = useState(initialSvgId);
   const [svgHeight, setSvgHeight] = useState(initialSvgHeight);
@@ -29,6 +30,7 @@ const SvgConstructor = ({
     <svg 
       xmlns="http://www.w3.org/2000/svg"
       xmlns:svg="http://www.w3.org/2000/svg"
+      style={{ position: 'absolute', top: 0, left: 0 }}
       id = {svgId}
       height = {svgHeight}
       width = {svgWidth}
@@ -39,7 +41,15 @@ const SvgConstructor = ({
           fill = {pathFill}
           stroke = {pathStroke}
           strokeWidth = {pathStrokeWidth}
-          d = {pathD} />
+          d = {pathD}>
+              <animate
+                attributeName="d"
+                attributeType="XML"
+                from={pathD}
+                to={addedPath}
+                dur="1s"
+                repeatCount="indefinite" />
+              </path>
     </svg>
   );
 {/* Data Needed
