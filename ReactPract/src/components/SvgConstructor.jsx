@@ -30,7 +30,7 @@ const SvgConstructor = ({
     <svg 
       xmlns="http://www.w3.org/2000/svg"
       xmlns:svg="http://www.w3.org/2000/svg"
-      style={{ position: 'absolute', top: 0, left: 0 }}
+      style={{ position: 'fixed', left: 0 }}
       id = {svgId}
       height = {svgHeight}
       width = {svgWidth}

@@ -2,23 +2,23 @@ import SvgConstructor from "../SvgConstructor";
 
 const DrawWiggle = () => {
     // New Paths from m 0 20 c 40 15 40 -15 100 10
-    const initPath = "M 0 10 C 40 15 40 -15 80 0";
-    const pathD1 = "M 0 20 C 60 15 60 -15 60 0";
-    const pathD2 = "M 0 30 C 60 15 60 -15 40 0";
-    const pathD3 = "M 0 40 C 60 15 60 -15 20 0";
-    const pathD4 = "M 0 50 C 60 15 60 -15 60 0";
-    const pathD5 = "M 0 40 C 60 15 60 -15 40 0";
-    const pathD6 = "M 0 30 C 60 15 60 -15 20 0";
-    const pathD7 = "M 0 20 C 60 15 60 -15 80 0";
+    const initPath = "M 0 10 C 10 15 10 -20 100 10";
+    const pathD1 = "M 0 20 C 20 20 5 -25 100 20";
+    const pathD2 = "M 0 15 C 15 25 0 -10 100 15";
+    const pathD3 = "M 0 10 C 10 15 5 -5 100 10";
+    const pathD4 = "M 0 25 C 25 5 10 -15 100 25";
+    const pathD5 = "M 0 15 C 15 10 15  -10 100 15";
+    const pathD6 = "M 0 20 C 20 25 20 -5 100 20";
+    const pathD7 = "M 0 10 C 10 5 5 -10 100 10";
 
     // Inverse 
-    const pathD8 = "M 20 0 C 60 15 60 -15 0 60";
-    const pathD9 = "M 30 0 C 60 15 60 -15 0 40";
-    const pathD10 = "M 40 0 C 60 15 60 -15 0 20";
-    const pathD11 = "M 50 0 C 60 15 60 -15 0 60";
-    const pathD12 = "M 40 0 C 60 15 60 -15 0 40";
-    const pathD13 = "M 30 0 C 60 15 60 -15 0 20";
-    const pathD14 = "M 20 0 C 60 15 60 -15 0 80";
+    const pathD8 = "M 0 10 C -10 15 10 -30 100 10";
+    const pathD9 = "M 0 15 C -20 20 5 -15 100 20";
+    const pathD10 = "M 0 10 C -15 25 0 -15 100 15";
+    const pathD11 = "M 0 25 C -10 15 5 -15 100 10";
+    const pathD12 = "M 0 15 C -25 5 10 -15 100 25";
+    const pathD13 = "M 0 20 C -15 10 15 -15 100 15";
+    const pathD14 = "M 0 10 C -20 5 20 -15 100 20";
 
     return (
         <>
@@ -27,7 +27,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -41,7 +41,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -55,7 +55,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -69,7 +69,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -83,7 +83,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -97,7 +97,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -111,7 +111,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -125,7 +125,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -139,7 +139,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -153,7 +153,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -167,7 +167,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -181,7 +181,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -195,7 +195,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
@@ -209,7 +209,7 @@ const DrawWiggle = () => {
             initialSvgId = "initialWiggle" 
             initialSvgHeight = "100%"
             initialSvgWidth = "100%"
-            initialSvgViewBox = "0 0 100 100"
+            initialSvgViewBox = "0 0 75 75"
             initialSvgPreserveAspectRatio = "none"
             initialPathId = "initialPathWiggle"
             initialPathFill = "none"
