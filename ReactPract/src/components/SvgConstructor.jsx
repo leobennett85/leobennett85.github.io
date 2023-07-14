@@ -13,6 +13,8 @@ const SvgConstructor = ({
   initialPathD,
   addedPath
 }) => {
+  const svg
+  
   const [svgId, setSvgId] = useState(initialSvgId);
   const [svgHeight, setSvgHeight] = useState(initialSvgHeight);
   const [svgWidth, setSvgWidth] = useState(initialSvgWidth);
@@ -23,6 +25,8 @@ const SvgConstructor = ({
   const [pathStroke, setPathStroke] = useState(initialPathStroke);
   const [pathStrokeWidth, setPathStrokeWidth] = useState(initialPathStrokeWidth);
   const [pathD, setPathD] = useState(initialPathD);
+
+  const svgValues = pathD + ";" + addedPath + ";" + pathD;
 
   // Add Hook Handles based on events
 
@@ -45,9 +49,9 @@ const SvgConstructor = ({
               <animate
                 attributeName="d"
                 attributeType="XML"
-                from={pathD}
-                to={addedPath}
-                dur="1s"
+                keyTimes="0; 0.5; 1"
+                values={svgValues}
+                dur="3s"
                 repeatCount="indefinite" />
               </path>
     </svg>
