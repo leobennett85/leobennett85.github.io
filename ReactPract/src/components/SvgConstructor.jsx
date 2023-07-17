@@ -13,7 +13,6 @@ const SvgConstructor = ({
   initialPathD,
   addedPath
 }) => {
-  const svg
   
   const [svgId, setSvgId] = useState(initialSvgId);
   const [svgHeight, setSvgHeight] = useState(initialSvgHeight);
