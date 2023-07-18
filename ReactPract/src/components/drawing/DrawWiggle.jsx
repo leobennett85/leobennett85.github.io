@@ -22,6 +22,19 @@ const DrawWiggle = () => {
     initCoords.set("cy2Init", 60);
     initCoords.set("endPointX", 100);
     initCoords.set("endPointY", 20);
+
+    const updatePath = (map, i) => {
+        const mx = map.get('mxInit');
+        const my = map.get('myInit');
+        const cx1 = map.get('cx1Init');
+        const cy1 = map.get('cy1Init');
+        const cx2 = map.get('cx2Init');
+        const cy2 = map.get('cy2Init');
+        const epX = map.get('endPointX');
+        const epY = map.get('endPointY');
+        const path = "M" + mx + "," + my + " C" + cx1 + "," + cy1 + " " + cx2 + "," + cy2 + " " +  epX + "," + epY;
+        return path;
+    }
     
     // Define Initial Path
     const initPath = "M" + mxInit + "," + myInit + " C" + cx1Init + "," + cy1Init + " " + cx2Init + "," + cy2Init + " " +  endPointX + "," + endPointY;
@@ -32,12 +45,13 @@ const DrawWiggle = () => {
 
     // A function to alter coords
     const changeInitCoord = (key, coord, i) => {
+        console.log("Key: " + key + " Coord: " + coord + " Iteration " + i);
             switch (key) {
                 case 'mxInit':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
                     mx = coord + 1;
                     console.log(i + ": " + "After: " + key + ": " + mx);
-                    break;
+                    return mx;
 
                 case 'myInit':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
@@ -47,7 +61,7 @@ const DrawWiggle = () => {
                         my = coord;
                     };
                     console.log(i + ": " + "After: " + key + ": " + my);
-                    break;
+                    return my;
 
                 case 'cx1Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
@@ -57,7 +71,7 @@ const DrawWiggle = () => {
                         cx1 = coord;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cx1);
-                    break;
+                    return cx1;
 
                 case 'cy1Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
@@ -67,7 +81,7 @@ const DrawWiggle = () => {
                         cy1 = coord + 75;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cy1);
-                    break;
+                    return cy1;
 
                 case 'cx2Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
@@ -77,7 +91,7 @@ const DrawWiggle = () => {
                         cx2 = coord - 85;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cx2);
-                    break;
+                    return cx2;
 
                 case 'cy2Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
@@ -87,48 +101,66 @@ const DrawWiggle = () => {
                         cy2 = coord - 85;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cy2);
-                    break;
+                    return cy2;
 
                 case 'endPointX':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
                     epX = coord;
                     console.log(i + ": " + "After: " + key + ": " + epX);
-                    break;
+                    return epX;
 
                 case 'endPointY':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
                     if (i === 0) {
-                        epY = coord - 1;
-                    } else if (i === 1) {
                         epY = coord;
+                    } else if (i === 1) {
+                        epY = coord - 1;
                     };
                     console.log(i + ": " + "After: " + key + ": " + epY);
-                    break;
-                }
+                    return epY;
             }
-    
-
-    for (let i = 0; i < 3; i++) {
+        }
+        
+    for (let i = 0; i < 10; i++) {
         const mapName = `newCoords${i}`;
+        let newPath = "";
+        let pathsArr = [];
         newCoords[mapName] = new Map();
-        const thisMap = newCoords[mapName];
         if (i === 0) {
             for (const [key, coord] of initCoords) {
-                thisMap.set(key, coord);
+                newCoords[mapName].set(key, coord);
             };
+            console.log("New Map Name: " + mapName);
         } else {
-            for (const [key, coord] of thisMap) {
-                for (let i = 0; i < 2; i++) {
-                    const changedCoord = changeInitCoord(key, coord, i);
-                    thisMap.set(key, changedCoord);
-                };
+            console.log(i);
+            const oldI = i - 1;
+            const prevMap = `newCoords${oldI}`;
+            for (const [key, coord] of newCoords[prevMap]) {
+                newCoords[mapName].set(key, coord);
             };
+            for (const [key, coord] of newCoords[mapName]) {
+                const currentKey = key;
+                const currentCoord = coord;
+                console.log("Current Key: " + currentKey);
+                console.log("Current Coord: " + currentCoord);
+                console.log(i);
+                const changedCoord = changeInitCoord(currentKey, currentCoord, i);
+                console.log("Changed Coord: " + changedCoord);
+                newCoords[mapName].set(currentKey, changedCoord);
+                newPath = updatePath(newCoords[mapName], i);
+                pathsArr.push(newPath);
+                console.log("New Path: " + newPath);
+            };
+            
+            
+            
+            console.log(newCoords[mapName]);
+            
         };
-        console.log(thisMap);
+        pathsArr.push(newPath);
+        console.log(pathsArr);
     };   
-        
-
-        
+    
     
     {/*
     const newCoords = new Map();
