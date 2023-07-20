@@ -13,13 +13,15 @@ const DrawWiggle = () => {
 
     // Define a map to handle initial coords for Wiggle path
     let initCoords = new Map();
+
+    // M 0 20 C 30 60 70 -30 100 20
     // Add initial values to initCoords
     initCoords.set("mxInit", 0);
     initCoords.set("myInit", 20);
     initCoords.set("cx1Init", 30);
-    initCoords.set("cy1Init", -30);
+    initCoords.set("cy1Init", 60);
     initCoords.set("cx2Init", 70);
-    initCoords.set("cy2Init", 60);
+    initCoords.set("cy2Init", -30);
     initCoords.set("endPointX", 100);
     initCoords.set("endPointY", 20);
 
@@ -33,6 +35,7 @@ const DrawWiggle = () => {
         const epX = map.get('endPointX');
         const epY = map.get('endPointY');
         const path = "M" + mx + "," + my + " C" + cx1 + "," + cy1 + " " + cx2 + "," + cy2 + " " +  epX + "," + epY;
+
         return path;
     }
     
@@ -45,7 +48,6 @@ const DrawWiggle = () => {
 
     // A function to alter coords
     const changeInitCoord = (key, coord, i) => {
-        console.log("Key: " + key + " Coord: " + coord + " Iteration " + i);
             switch (key) {
                 case 'mxInit':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
@@ -55,50 +57,50 @@ const DrawWiggle = () => {
 
                 case 'myInit':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
-                    if (i === 0) {
-                        my = coord + 1;
-                    } else if (i === 1) {
+                    if (i % 2 == 0 || i == 0) {
                         my = coord;
+                    } else {
+                        my = coord +1;
                     };
                     console.log(i + ": " + "After: " + key + ": " + my);
                     return my;
 
                 case 'cx1Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
-                    if (i === 0) {
-                        cx1 = coord + 5;
-                    } else if (i === 1) {
+                    if (i % 2 == 0 || i == 0) {
                         cx1 = coord;
+                    } else {
+                        cx1 = coord + 5;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cx1);
                     return cx1;
 
                 case 'cy1Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
-                    if (i === 0) {
-                        cy1 = coord -85;
-                    } else if (i === 1) {
+                    if (i % 2 == 0 || i == 0) {
                         cy1 = coord + 75;
+                    } else {
+                        cy1 = coord - 85;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cy1);
                     return cy1;
 
                 case 'cx2Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
-                    if (i === 0) {
-                        cx2 = coord + 85;
-                    } else if (i === 1) {
-                        cx2 = coord - 85;
+                    if (i % 2 == 0 || i == 0) {
+                        cx2 = coord;
+                    } else {
+                        cx2 = coord + 5;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cx2);
                     return cx2;
 
                 case 'cy2Init':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
-                    if (i === 0) {
+                    if (i % 2 == 0 || i == 0) {
+                        cy2 = coord - 80;
+                    } else {
                         cy2 = coord + 85;
-                    } else if (i === 1) {
-                        cy2 = coord - 85;
                     };
                     console.log(i + ": " + "After: " + key + ": " + cy2);
                     return cy2;
@@ -111,9 +113,9 @@ const DrawWiggle = () => {
 
                 case 'endPointY':
                     console.log(i + ": " + "Before: " + key + ": " + coord);
-                    if (i === 0) {
+                    if (i % 2 == 0 || i == 0) {
                         epY = coord;
-                    } else if (i === 1) {
+                    } else {
                         epY = coord - 1;
                     };
                     console.log(i + ": " + "After: " + key + ": " + epY);
@@ -123,42 +125,33 @@ const DrawWiggle = () => {
         
     for (let i = 0; i < 10; i++) {
         const mapName = `newCoords${i}`;
-        let newPath = "";
-        let pathsArr = [];
+        let newPaths = [];
         newCoords[mapName] = new Map();
         if (i === 0) {
             for (const [key, coord] of initCoords) {
                 newCoords[mapName].set(key, coord);
             };
             console.log("New Map Name: " + mapName);
-        } else {
-            console.log(i);
+            console.log([...newCoords[mapName].entries()]);
+        } else if (i > 0) {
             const oldI = i - 1;
             const prevMap = `newCoords${oldI}`;
             for (const [key, coord] of newCoords[prevMap]) {
                 newCoords[mapName].set(key, coord);
             };
+            console.log("New Map Name: " + mapName);
             for (const [key, coord] of newCoords[mapName]) {
                 const currentKey = key;
                 const currentCoord = coord;
                 console.log("Current Key: " + currentKey);
                 console.log("Current Coord: " + currentCoord);
-                console.log(i);
                 const changedCoord = changeInitCoord(currentKey, currentCoord, i);
                 console.log("Changed Coord: " + changedCoord);
                 newCoords[mapName].set(currentKey, changedCoord);
-                newPath = updatePath(newCoords[mapName], i);
-                pathsArr.push(newPath);
-                console.log("New Path: " + newPath);
             };
-            
-            
-            
-            console.log(newCoords[mapName]);
-            
+            console.log("New Map Name: " + mapName);
+            console.log("New Map Entries: " + [...newCoords[mapName].entries()]);
         };
-        pathsArr.push(newPath);
-        console.log(pathsArr);
     };   
     
     
@@ -181,16 +174,17 @@ const DrawWiggle = () => {
     };
 
     */}
-    const pathD1 = "M 0 20 C 30 60 70 -30 100 20";
 
-    const pathD2 = "M 0 21 C 35 -25 75 55 100 19";
-    const pathD3 = "M 0 21 C 35 50 75 -25 100 19";
+    const pathD1 = "M 0 20 C 30 60 70 -30 100 20"; // 0
 
-    const pathD4 = "M 0 22 C 40 -20 80 50 100 18";
-    const pathD5 = "M 0 22 C 40 50 80 -20 100 18";
+    const pathD2 = "M 0 21 C 35 -25 75 55 100 19"; // 1 
+    const pathD3 = "M 0 21 C 35 50 75 -25 100 19"; // 2 
 
-    const pathD6 = "M 0 23 C 45 -15 85 45 100 17";
-    const pathD7 = "M 0 23 C 45 45 85 -15 100 17";
+    const pathD4 = "M 0 22 C 40 -20 80 50 100 18"; // 3 
+    const pathD5 = "M 0 22 C 40 50 80 -20 100 18"; // 4
+
+    const pathD6 = "M 0 23 C 45 -15 85 45 100 17"; // 5
+    const pathD7 = "M 0 23 C 45 45 85 -15 100 17"; // 6
 
     // Inverse 
     const pathD8 = "M 0 10 C -10 15 10 -30 100 10";
