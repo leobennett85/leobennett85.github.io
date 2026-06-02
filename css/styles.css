@@ -5,6 +5,7 @@ body {
     padding: 20px;
     line-height: 1.6;
 }
+<<<<<<< HEAD
 
 header {
     text-align: center;
@@ -28,4 +29,28 @@ section {
 h2 {
     border-bottom: 1px solid #ccc;
 }
+=======
+>>>>>>> 19a11cc (Update portfolio content and styling)
 
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+}
